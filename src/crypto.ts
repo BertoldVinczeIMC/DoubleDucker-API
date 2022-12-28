@@ -1,5 +1,5 @@
-import crypto from "crypto";
-import { logError, logInfo } from "./logger";
+import crypto from 'crypto';
+import { logError, logInfo } from './logger';
 
 export function shortenUrl(url: string): Promise<string> {
   return new Promise((resolve, reject) => {
@@ -8,7 +8,7 @@ export function shortenUrl(url: string): Promise<string> {
         logError(`Error while creating short url: ${err.message}`);
         reject(err.message);
       } else {
-        let ret = buffer.toString("hex");
+        let ret = buffer.toString('hex');
         logInfo(`Created short url: ${ret} | original url: ${url}`);
         resolve(ret);
       }

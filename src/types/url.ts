@@ -1,4 +1,4 @@
-import { Schema } from "../validation/body_parser";
+import { Schema } from '../validation/body_parser';
 
 /**
  * Body parser type definition for POST /api/url
@@ -12,7 +12,7 @@ export type CreateUrlParser = {
  */
 export const UrlSchema: Schema = {
   fields: {
-    url: "string",
+    url: 'string',
   },
-  required: ["url"],
+  required: ['url'],
 };

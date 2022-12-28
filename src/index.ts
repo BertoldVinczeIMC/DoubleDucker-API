@@ -1,14 +1,16 @@
 /* modules */
-import express, { Express, Request, Response } from "express";
-import { Prisma, PrismaClient } from "@prisma/client";
-import dotenv from "dotenv";
+import express, { Express, Request, Response } from 'express';
+import { Prisma, PrismaClient } from '@prisma/client';
+import dotenv from 'dotenv';
 
 /* Local modules */
-import { IRestDefaultResponse } from "./types/rest_response";
-import { CreateUrlParser, UrlSchema } from "./types/url";
-import { validate } from "./validation/body_parser";
-import { shortenUrl } from "./crypto";
-import { logMiddleware, logError } from "./logger";
+import { validate } from './validation/body_parser';
+import { shortenUrl } from './crypto';
+import { logMiddleware, logError } from './logger';
+
+/* Types */
+import { IRestDefaultResponse } from './types/rest_response';
+import { CreateUrlParser, UrlSchema } from './types/url';
 
 /* App Setup */
 
@@ -30,10 +32,10 @@ app.use(logMiddleware);
 /**
  * @apiName Default route
  */
-app.get("/", (req: Request, res: Response) => {
+app.get('/', (req: Request, res: Response) => {
   return res.status(404).json({
     status: 404,
-    message: "Not Found",
+    message: 'Not Found',
   } as IRestDefaultResponse);
 });
 
@@ -43,13 +45,13 @@ app.get("/", (req: Request, res: Response) => {
  * @body {JSON} body will be parsed and validated. Valid body is {url: string}
  * @response IRestDefaultResponse with status,message and data
  */
-app.post("/api/url", async (req: Request, res: Response) => {
+app.post('/api/url', async (req: Request, res: Response) => {
   try {
     const valid = await validate(req.body, UrlSchema);
     if (!valid)
       return res.status(422).json({
         status: 422,
-        message: "Unprocessable Entity, Invalid Post Body",
+        message: 'Unprocessable Entity, Invalid Post Body',
         data: null,
       } as IRestDefaultResponse);
 
@@ -69,7 +71,7 @@ app.post("/api/url", async (req: Request, res: Response) => {
     if (existing) {
       return res.status(200).json({
         status: 200,
-        message: "Cannot create short url, this url already exists",
+        message: 'Cannot create short url, this url already exists',
         data: existing,
       } as IRestDefaultResponse);
     }
@@ -81,18 +83,18 @@ app.post("/api/url", async (req: Request, res: Response) => {
         data: {
           decoded: url.url,
           encoded: shortUrl,
-          user_id: "muster",
+          user_id: 'muster',
         },
       });
       return res.status(200).json({
         status: 200,
-        message: "OK",
+        message: 'OK',
         data: newUrl,
       } as IRestDefaultResponse);
     } catch (err) {
       return res.status(500).json({
         status: 500,
-        message: "Internal Server Error",
+        message: 'Internal Server Error',
         data: null,
       } as IRestDefaultResponse);
     }
@@ -100,7 +102,7 @@ app.post("/api/url", async (req: Request, res: Response) => {
     logError(err);
     return res.status(500).json({
       status: 500,
-      message: "Internal Server Error",
+      message: 'Internal Server Error',
       data: null,
     } as IRestDefaultResponse);
   }
@@ -112,7 +114,7 @@ app.post("/api/url", async (req: Request, res: Response) => {
  * @param {string} id is the short url
  * @response IRestDefaultResponse with status,message and data
  */
-app.get("/api/url/:id", async (req: Request, res: Response) => {
+app.get('/api/url/:id', async (req: Request, res: Response) => {
   try {
     const id = req.params.id;
     const url = await client.url.findFirst({
@@ -128,13 +130,13 @@ app.get("/api/url/:id", async (req: Request, res: Response) => {
     if (url) {
       return res.status(200).json({
         status: 200,
-        message: "OK",
+        message: 'OK',
         data: url,
       } as IRestDefaultResponse);
     } else {
       return res.status(404).json({
         status: 404,
-        message: "Not Found",
+        message: 'Not Found',
         data: null,
       } as IRestDefaultResponse);
     }
@@ -142,7 +144,7 @@ app.get("/api/url/:id", async (req: Request, res: Response) => {
     logError(err);
     return res.status(500).json({
       status: 500,
-      message: "Internal Server Error",
+      message: 'Internal Server Error',
       data: null,
     } as IRestDefaultResponse);
   }

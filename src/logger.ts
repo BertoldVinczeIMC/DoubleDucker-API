@@ -1,5 +1,5 @@
-import fs from "fs";
-import { Request, Response, NextFunction } from "express";
+import fs from 'fs';
+import { Request, Response, NextFunction } from 'express';
 
 /**
  * Logs every request to the server
@@ -19,11 +19,11 @@ export function logMiddleware(req: Request, res: Response, next: NextFunction) {
  */
 export function logInfo(message: string) {
   // now in DD/MM/YYYY HH:MM:SS format
-  const date = new Date().toLocaleString("at-AT");
+  const date = new Date().toLocaleString('at-AT');
   // create prefix like [date] [info]
   const prefix = `[${date}] [info]: `;
-  message = prefix + message + "\n";
-  fs.appendFile("log.txt", message, (err) => {
+  message = prefix + message + '\n';
+  fs.appendFile('log.txt', message, (err) => {
     if (err) {
       console.error(err);
     }
@@ -36,11 +36,11 @@ export function logInfo(message: string) {
  */
 export function logError(message: string) {
   // now in DD/MM/YYYY HH:MM:SS format
-  const date = new Date().toLocaleString("at-AT");
+  const date = new Date().toLocaleString('at-AT');
   // create prefix like [date] [info]
   const prefix = `[${date}] [error]: `;
   message = prefix + message;
-  fs.appendFile("log.txt", message, (err) => {
+  fs.appendFile('log.txt', message, (err) => {
     if (err) {
       console.error(err);
     }
@@ -53,11 +53,11 @@ export function logError(message: string) {
  */
 export function logWarning(message: string) {
   // now in DD/MM/YYYY HH:MM:SS format
-  const date = new Date().toLocaleString("at-AT");
+  const date = new Date().toLocaleString('at-AT');
   // create prefix like [date] [info]
   const prefix = `[${date}] [warning]: `;
   message = prefix + message;
-  fs.appendFile("log.txt", message, (err) => {
+  fs.appendFile('log.txt', message, (err) => {
     if (err) {
       console.error(err);
     }
