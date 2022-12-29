@@ -20,6 +20,7 @@ npm install
 ```bash
 PORT= #Port for the server to run on
 DATABASE_URL= #DB URL for Prisma (see Prisma docs for more info)
+SECRET= #Secret for JWT
 ```
 4. Use Prisma to upload the schema to the database
 ```bash
