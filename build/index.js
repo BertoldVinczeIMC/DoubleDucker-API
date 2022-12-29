@@ -16,6 +16,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const client_1 = require("@prisma/client");
 const dotenv_1 = __importDefault(require("dotenv"));
+const cors_1 = __importDefault(require("cors"));
 const bcrypt_1 = __importDefault(require("bcrypt"));
 /* Local modules */
 const body_parser_1 = require("./validation/body_parser");
@@ -30,6 +31,7 @@ const client = new client_1.PrismaClient();
 dotenv_1.default.config();
 const PORT = process.env.PORT;
 /* Middlewares */
+app.use((0, cors_1.default)());
 app.use(express_1.default.json());
 app.use(logger_1.logMiddleware);
 /* Routes */
@@ -78,11 +80,12 @@ app.post("/api/url", token_1.checkToken, (req, res) => __awaiter(void 0, void 0,
         // generate uuid from crypto lib
         try {
             const shortUrl = yield (0, crypto_1.shortenUrl)(url.url);
+            const tmp = (0, token_1.decodeToken)((0, token_1.getToken)(req));
             const newUrl = yield client.url.create({
                 data: {
                     decoded: url.url,
                     encoded: shortUrl,
-                    user_id: "muster",
+                    user_id: tmp.user.user_id,
                 },
             });
             return res.status(200).json({
@@ -92,6 +95,7 @@ app.post("/api/url", token_1.checkToken, (req, res) => __awaiter(void 0, void 0,
             });
         }
         catch (err) {
+            (0, logger_1.logError)(err);
             return res.status(500).json({
                 status: 500,
                 message: "Internal Server Error",
@@ -176,7 +180,10 @@ app.post("/api/login", (req, res) => __awaiter(void 0, void 0, void 0, function*
         if (auth_user) {
             const match = yield bcrypt_1.default.compare(user.password, auth_user.password);
             if (match) {
-                const token = (0, token_1.createToken)(auth_user.email);
+                const token = (0, token_1.createToken)({
+                    email: user.email,
+                    user_id: auth_user.user_id,
+                });
                 return res.status(200).json({
                     status: 200,
                     message: "OK",
@@ -255,11 +262,44 @@ app.post("/api/register", (req, res) => __awaiter(void 0, void 0, void 0, functi
                 password: hashedPassword,
             },
         });
-        const token = yield (0, token_1.createToken)(newUser.user_id);
+        const token = yield (0, token_1.createToken)({
+            email: newUser.email,
+            user_id: newUser.user_id,
+        });
         return res.status(200).json({
             status: 200,
             message: "User created",
             data: token,
+        });
+    }
+    catch (err) {
+        (0, logger_1.logError)(err);
+        return res.status(500).json({
+            status: 500,
+            message: "Internal Server Error",
+            data: null,
+        });
+    }
+}));
+app.get("/api/urls", token_1.checkToken, (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    try {
+        const tmp = (0, token_1.decodeToken)((0, token_1.getToken)(req));
+        const user_id = tmp.user.user_id;
+        const urls = yield client.url.findMany({
+            select: {
+                decoded: true,
+                encoded: true,
+                user_id: false,
+                created_at: true,
+            },
+            where: {
+                user_id: user_id,
+            },
+        });
+        return res.status(200).json({
+            status: 200,
+            message: "OK",
+            data: urls,
         });
     }
     catch (err) {

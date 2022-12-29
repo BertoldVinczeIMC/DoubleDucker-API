@@ -9,7 +9,7 @@ export interface IRequest extends Request {
 }
 
 export const createToken = (user: any) => {
-  return jwt.sign({ user }, process.env.SECRET as string, { expiresIn: "24h" });
+  return jwt.sign({ user }, process.env.SECRET as string, { expiresIn: "2h" });
 };
 
 export const verifyToken = (token: string, secret: string) => {
@@ -36,14 +36,14 @@ export const checkToken = (req: Request, res: Response, next: NextFunction) => {
       const user = verifyToken(token, process.env.SECRET as string);
       (req as IRequest).user = user;
     } catch (err) {
-      res.status(401).json({
+      return res.status(401).json({
         status: 401,
         message: "Unauthorized",
         data: null,
       });
     }
   } else {
-    res.status(401).json({
+    return res.status(401).json({
       status: 401,
       message: "Unauthorized",
       data: null,

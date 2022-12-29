@@ -95,3 +95,99 @@ Note: Lines with + are required, lines with ? are optional.
 [29.12.2022, 15:05:16] [info]: Created short url: 427bbf35 | original url: www.google.com/asd
 [29.12.2022, 15:05:21] [info]: POST /api/url ::1
 [29.12.2022, 15:05:43] [info]: GET /api/url/427bbf35 ::1
+[29.12.2022, 16:14:21] [info]: OPTIONS /api/login ::1
+[29.12.2022, 16:15:23] [info]: POST /api/login ::1
+[29.12.2022, 16:15:28] [error]: Error: 
+Invalid `client.auth.findFirst()` invocation in
+C:\Users\bvincze\Personal\DoubleDucker-API\src\index.ts:186:41
+
+  183   } as IRestDefaultResponse);
+  184 }
+  185 const user: LoginUserParser = req.body;
+→ 186 const auth_user = await client.auth.findFirst(
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.[29.12.2022, 16:16:15] [info]: POST /api/login ::1
+[29.12.2022, 16:16:15] [error]: Error: 
+Invalid `client.auth.findFirst()` invocation in
+C:\Users\bvincze\Personal\DoubleDucker-API\src\index.ts:186:41
+
+  183   } as IRestDefaultResponse);
+  184 }
+  185 const user: LoginUserParser = req.body;
+→ 186 const auth_user = await client.auth.findFirst(
+Can't reach database server at `localhost`:`3306`
+
+Please make sure your database server is running at `localhost`:`3306`.[29.12.2022, 16:16:35] [info]: POST /api/login ::1
+[29.12.2022, 16:16:40] [info]: POST /api/login ::1
+[29.12.2022, 16:17:45] [info]: POST /api/login ::1
+[29.12.2022, 16:18:54] [info]: POST /api/login ::1
+[29.12.2022, 16:19:44] [info]: POST /api/login ::1
+[29.12.2022, 16:20:40] [info]: POST /api/login ::1
+[29.12.2022, 16:21:36] [info]: POST /api/login ::1
+[29.12.2022, 16:21:43] [info]: POST /api/login ::1
+[29.12.2022, 16:48:24] [info]: POST /api/login ::1
+[29.12.2022, 17:05:06] [info]: POST /api/login ::1
+[29.12.2022, 17:06:17] [info]: POST /api/login ::1
+[29.12.2022, 17:08:49] [info]: POST /api/login ::1
+[29.12.2022, 17:12:06] [info]: POST /api/login ::1
+[29.12.2022, 17:12:16] [info]: POST /api/login ::1
+[29.12.2022, 17:12:58] [info]: POST /api/login ::1
+[29.12.2022, 17:22:47] [info]: POST /api/login ::1
+[29.12.2022, 17:23:01] [info]: GET /api/155f6328909235bd68a48db923a46250/urls ::1
+[29.12.2022, 17:24:15] [info]: GET /api/155f6328909235bd68a48db923a46250/urls ::1
+[29.12.2022, 17:24:23] [info]: GET /api/urls ::1
+[29.12.2022, 17:24:41] [info]: GET /api/urls ::1
+[29.12.2022, 17:25:07] [info]: GET /api/urls ::1
+[29.12.2022, 17:25:54] [info]: GET /api/urls ::1
+[29.12.2022, 17:29:10] [info]: POST /api/login ::1
+[29.12.2022, 17:33:26] [info]: POST /api/login ::1
+[29.12.2022, 17:34:11] [info]: POST /api/login ::1
+[29.12.2022, 17:34:44] [info]: POST /api/login ::1
+[29.12.2022, 19:43:17] [info]: POST /api/login ::1
+[29.12.2022, 19:50:11] [info]: POST /api/login ::1
+[29.12.2022, 19:52:59] [info]: GET /api/urls ::1
+[29.12.2022, 19:54:19] [info]: GET /api/urls ::1
+[29.12.2022, 19:55:41] [info]: GET /api/urls ::1
+[29.12.2022, 19:55:49] [info]: GET /api/urls ::1
+[29.12.2022, 19:56:10] [info]: GET /api/urls ::1
+[29.12.2022, 19:56:21] [info]: GET /api/urls ::1
+[29.12.2022, 19:56:32] [info]: GET /api/urls ::1
+[29.12.2022, 19:56:51] [info]: GET /api/urls ::1
+[29.12.2022, 19:56:59] [info]: GET /api/urls ::1
+[29.12.2022, 19:57:20] [info]: GET /api/urls ::1
+[29.12.2022, 19:58:33] [info]: GET /api/urls ::1
+[29.12.2022, 19:58:41] [info]: GET /api/urls ::1
+[29.12.2022, 19:58:46] [info]: GET /api/urls ::1
+[29.12.2022, 19:59:53] [info]: GET /api/urls ::1
+[29.12.2022, 20:00:20] [info]: DELETE /api/urls/427bbf35 ::1
+[29.12.2022, 20:00:20] [info]: DELETE /api/urls/427bbf3f ::1
+[29.12.2022, 20:00:20] [info]: GET /api/urls ::1
+[29.12.2022, 20:00:20] [info]: DELETE /api/urls/427bbf35 ::1
+[29.12.2022, 20:00:20] [info]: DELETE /api/urls/427bbf3f ::1
+[29.12.2022, 20:00:56] [info]: GET /api/urls ::1
+[29.12.2022, 20:05:38] [info]: GET /api/urls ::1
+[29.12.2022, 20:05:42] [info]: DELETE /api/url/427bbf3f ::1
+[29.12.2022, 20:05:47] [info]: GET /api/urls ::1
+[29.12.2022, 20:06:06] [info]: DELETE /api/url/427bbf35 ::1
+[29.12.2022, 20:06:22] [info]: GET /api/urls ::1
+[29.12.2022, 20:06:48] [info]: GET /api/urls ::1
+[29.12.2022, 20:07:47] [info]: GET /api/urls ::1
+[29.12.2022, 20:07:54] [info]: GET /api/urls ::1
+[29.12.2022, 20:08:11] [info]: GET /api/urls ::1
+[29.12.2022, 20:08:48] [info]: GET /api/urls ::1
+[29.12.2022, 20:09:10] [info]: GET /api/urls ::1
+[29.12.2022, 20:09:18] [info]: GET /api/urls ::1
+[29.12.2022, 20:09:32] [info]: GET /api/urls ::1
+[29.12.2022, 20:10:58] [info]: GET /api/urls ::1
+[29.12.2022, 20:11:13] [info]: GET /api/urls ::1
+[29.12.2022, 20:11:26] [info]: GET /api/urls ::1
+[29.12.2022, 20:12:14] [info]: GET /api/urls ::1
+[29.12.2022, 20:12:25] [info]: GET /api/urls ::1
+[29.12.2022, 20:19:03] [info]: GET /api/urls ::1
+[29.12.2022, 20:20:03] [info]: GET /api/urls ::1
+[29.12.2022, 20:21:01] [info]: GET /api/urls ::1
+[29.12.2022, 20:21:12] [info]: GET /api/urls ::1
+[29.12.2022, 20:23:12] [info]: GET /api/urls ::1
+[29.12.2022, 20:23:57] [info]: GET /api/urls ::1
+[29.12.2022, 20:24:22] [info]: POST /api/login ::1
