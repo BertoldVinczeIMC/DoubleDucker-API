@@ -15,3 +15,18 @@ export function shortenUrl(url: string): Promise<string> {
     });
   });
 }
+
+export function createuuid(): Promise<string> {
+  return new Promise((resolve, reject) => {
+    crypto.randomBytes(16, (err, buffer) => {
+      if (err) {
+        logError(`Error while creating uuid: ${err.message}`);
+        reject(err.message);
+      } else {
+        let ret = buffer.toString('hex');
+        logInfo(`Created uuid: ${ret}`);
+        resolve(ret);
+      }
+    });
+  });
+}

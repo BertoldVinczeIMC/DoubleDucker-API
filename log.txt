@@ -3,3 +3,95 @@
 [28.12.2022, 21:55:02] [info]: POST /api/url ::1
 [28.12.2022, 21:57:18] [info]: GET /api/url/:32f730e1 ::1
 [28.12.2022, 21:57:54] [info]: GET /api/url/32f730e1 ::1
+[29.12.2022, 14:18:11] [info]: GET /api/regisz ::1
+[29.12.2022, 14:19:43] [info]: GET /api/register ::1
+[29.12.2022, 14:19:50] [info]: POST /api/register ::1
+[29.12.2022, 14:20:57] [info]: POST /api/register ::1
+[29.12.2022, 14:20:57] [info]: Created uuid: 400ee9e42fe16279f67b0d719d7f0f77
+[29.12.2022, 14:20:57] [error]: Error: Invalid salt. Salt must be in the form of: $Vers$log2(NumRounds)$saltvalue[29.12.2022, 14:21:52] [info]: POST /api/register ::1
+[29.12.2022, 14:21:52] [info]: Created uuid: 28b76582570adc17c498b13684cbe553
+[29.12.2022, 14:21:57] [info]: POST /api/register ::1
+[29.12.2022, 14:21:57] [info]: Created uuid: 1c5cb45556c41af8c06a5fd242de2e34
+[29.12.2022, 14:22:00] [info]: POST /api/register ::1
+[29.12.2022, 14:22:00] [info]: Created uuid: d64fc80a5be02b5ccf6ae5fac1fb32c3
+[29.12.2022, 14:22:38] [info]: POST /api/register ::1
+[29.12.2022, 14:22:38] [info]: Created uuid: 0007e1d6215e8e19451cdac0662105f5
+[29.12.2022, 14:23:00] [info]: POST /api/register ::1
+[29.12.2022, 14:23:00] [info]: Created uuid: dc876752f2ca46c43e13b20d41f3d2aa
+[29.12.2022, 14:25:15] [info]: POST /api/register ::1
+[29.12.2022, 14:25:15] [info]: Created uuid: 6527836b93d06e0a54a06c4d44f394b4
+[29.12.2022, 14:25:18] [info]: POST /api/register ::1
+[29.12.2022, 14:36:37] [info]: POST /api/register ::1
+[29.12.2022, 14:36:57] [info]: POST /api/register ::1
+[29.12.2022, 14:36:57] [info]: Created uuid: 673e090d96ad0e2239aa35ddd8d4a3b9
+[29.12.2022, 14:41:09] [info]: POST /api/login ::1
+[29.12.2022, 14:41:16] [info]: POST /api/login ::1
+[29.12.2022, 14:41:21] [info]: POST /api/login ::1
+[29.12.2022, 14:41:27] [info]: POST /api/login ::1
+[29.12.2022, 14:43:49] [info]: POST /api/login ::1
+[29.12.2022, 14:43:55] [info]: POST /api/login ::1
+[29.12.2022, 14:44:42] [info]: POST /api/url ::1
+[29.12.2022, 14:44:42] [info]: Created short url: 5cf28e1d | original url: www.google.com/asd
+[29.12.2022, 14:46:28] [info]: POST /api/url ::1
+[29.12.2022, 14:49:14] [info]: POST /api/url ::1
+[29.12.2022, 14:49:18] [info]: POST /api/url ::1
+[29.12.2022, 14:49:19] [info]: POST /api/url ::1
+[29.12.2022, 14:49:20] [info]: POST /api/url ::1
+[29.12.2022, 14:49:20] [info]: POST /api/url ::1
+[29.12.2022, 14:49:21] [info]: POST /api/url ::1
+[29.12.2022, 14:49:22] [info]: POST /api/url ::1
+[29.12.2022, 14:49:22] [info]: POST /api/url ::1
+[29.12.2022, 14:49:23] [info]: POST /api/url ::1
+[29.12.2022, 14:49:24] [info]: POST /api/url ::1
+[29.12.2022, 14:49:25] [info]: POST /api/url ::1
+[29.12.2022, 14:49:31] [info]: POST /api/url ::1
+[29.12.2022, 14:49:31] [info]: Created short url: b2050d7e | original url: www.google.com/asd22
+[29.12.2022, 14:49:32] [info]: POST /api/url ::1
+[29.12.2022, 14:49:34] [info]: POST /api/url ::1
+[29.12.2022, 14:49:35] [info]: POST /api/url ::1
+[29.12.2022, 14:49:36] [info]: POST /api/url ::1
+[29.12.2022, 14:49:36] [info]: POST /api/url ::1
+[29.12.2022, 14:50:00] [info]: POST /api/url ::1
+[29.12.2022, 14:50:05] [info]: POST /api/url ::1
+[29.12.2022, 14:50:11] [info]: POST /api/url ::1
+[29.12.2022, 14:50:11] [info]: Created short url: b187aca1 | original url: www.google.com/asd1111
+[29.12.2022, 14:53:02] [info]: GET /api/register ::1
+[29.12.2022, 14:53:08] [info]: POST /api/register ::1
+[29.12.2022, 14:53:08] [info]: Created uuid: 155f6328909235bd68a48db923a46250
+[29.12.2022, 14:53:13] [info]: POST /api/register ::1
+[29.12.2022, 14:53:18] [info]: POST /api/register ::1
+[29.12.2022, 14:53:27] [info]: POST /api/register ::1
+[29.12.2022, 14:53:27] [info]: Created uuid: b6be297ed388253594bad57be5976d67
+[29.12.2022, 14:55:03] [info]: POST /api/login ::1
+[29.12.2022, 14:56:19] [info]: POST /api/url ::1
+[29.12.2022, 14:56:19] [info]: Created short url: dfcb77f7 | original url: www.google.com/asd1111
+[29.12.2022, 15:01:01] [info]: POST /api/url ::1
+[29.12.2022, 15:01:01] [info]: Created short url: 4f6f9edb | original url: www.google.com/asd
+[29.12.2022, 15:01:43] [info]: POST /api/url ::1
+[29.12.2022, 15:01:43] [info]: Created short url: f848a7b5 | original url: www.google.com/asd
+[29.12.2022, 15:02:41] [info]: POST /api/url ::1
+[29.12.2022, 15:02:41] [info]: Created short url: c755c784 | original url: www.google.com/asd
+[29.12.2022, 15:02:41] [error]: Error: 
+Invalid `client.url.create()` invocation in
+C:\Users\bvincze\Personal\DoubleDucker\src\index.ts:95:39
+
+  92 try {
+  93   const shortUrl: string = await shortenUrl(url.url);
+  94   let tmp = req as IRequest;
+→ 95   const newUrl = await client.url.create({
+         data: {
+           decoded: 'www.google.com/asd',
+           encoded: 'c755c784',
+       +   user_id: String,
+       ?   created_at?: DateTime,
+       ?   updated_at?: DateTime
+         }
+       })
+
+Argument user_id for data.user_id is missing.
+
+Note: Lines with + are required, lines with ? are optional.
+[29.12.2022, 15:05:16] [info]: POST /api/url ::1
+[29.12.2022, 15:05:16] [info]: Created short url: 427bbf35 | original url: www.google.com/asd
+[29.12.2022, 15:05:21] [info]: POST /api/url ::1
+[29.12.2022, 15:05:43] [info]: GET /api/url/427bbf35 ::1
